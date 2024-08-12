@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 const startGame = () => {
     const initialStory = {
-        text: "Hi i'm kinda trapped. I need you help, They tried to kidnap me.",
+        text: "Hey, I'm trapped! Need your help. They're trying to kidnap me.",
         options: [
-            { text: "Where are you.", nextStory: 1 , waitTime: 1000},
-            { text: "Who is this?.", nextStory: 16 , waitTime: 1500}
+            { text: "Where are you?", nextStory: 1, waitTime: 1000 },
+            { text: "Who's this?", nextStory: 16, waitTime: 1500 }
         ]
     };
 
@@ -35,6 +35,8 @@ const showStory = (story,sender)=>{
     messageElement.style.background = "transparent"
     setTimeout(()=>{
         messageElement.style.backgroundColor = "var(--incoming-chat-bg)"
+        //incoming message sound
+        playSound("incoming-message.mp3")
         messageElement.innerText = story.text
 
         optionsContainer.innerHTML = ""
@@ -45,6 +47,9 @@ const showStory = (story,sender)=>{
             button.innerText = option.text
     
             button.addEventListener("click",()=>{
+                //click sound
+                playSound("click.mp3")
+
                 const nextStory = getStoryById(option.nextStory)
                 const messageContainer = document.createElement("div")
                 messageContainer.classList.add("message-container")
@@ -74,4 +79,10 @@ const showStory = (story,sender)=>{
     chatWindow.scrollTop = chatWindow.scrollHeight
 
 
+}
+
+function playSound(sound){
+    let pathToSound = `assets/music/${sound}`
+    const audio = new Audio(pathToSound)
+    audio.play()
 }

@@ -106,3 +106,9 @@ body {
 .option-button:hover {
     background-color: var(--theme-color-hover);
 }
+.settings{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap:2px
+}
