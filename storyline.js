@@ -310,5 +310,15 @@ const stories = [
         text: "Made it! Safe and sound.",
         waitTime: 1500,
         options: []
+    },
+    //for the qn who is this
+    {
+        id:41,
+        text:"I'm Anne, i found this number on a whatsApp group it was the only one online. Please help me please",
+        waitTime:500,
+        options:[
+            { text: "Where are you", nextStory: 1, waitTime: 700 },
+            { text: "Hide quickly", nextStory: 2, waitTime: 1000 }
+        ]
     }
 ];

@@ -11,7 +11,7 @@ const startGame = () => {
         text: "Hey, I'm trapped! Need your help. They're trying to kidnap me.",
         options: [
             { text: "Where are you?", nextStory: 1, waitTime: 1000 },
-            { text: "Who's this?", nextStory: 16, waitTime: 1500 }
+            { text: "Who's this?", nextStory: 41, waitTime: 1500 }
         ]
     };
 
@@ -38,9 +38,11 @@ const showStory = (story,sender)=>{
         //incoming message sound
         playSound("incoming-message.mp3")
         messageElement.innerText = story.text
-
+        
         optionsContainer.innerHTML = ""
-    
+        //scrolling to the bottom
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+        
         story.options.forEach(option => {
             const button = document.createElement("button")
             button.classList.add("option-button")

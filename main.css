@@ -7,6 +7,9 @@
     --theme-color-hover: rgb(27, 160, 109);
     --theme-color: rgba(27, 156, 100, 0.788);
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Arial, sans-serif;
