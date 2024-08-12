@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 const startGame = () => {
     const initialStory = {
-        text: "You receive a frantic message from a girl named Anna. She's trapped in a room and needs your help to escape.",
+        text: "Hi i'm kinda trapped. I need you help, They tried to kidnap me.",
         options: [
-            { text: "Ask her where she is.", nextStory: 1 , waitTime: 2000},
-            { text: "Tell her to hide.", nextStory: 2 , waitTime: 2500}
+            { text: "Where are you.", nextStory: 1 , waitTime: 1000},
+            { text: "Who is this?.", nextStory: 16 , waitTime: 1500}
         ]
     };
 
@@ -73,23 +73,5 @@ const showStory = (story,sender)=>{
     chatWindow.appendChild(messageElement)
     chatWindow.scrollTop = chatWindow.scrollHeight
 
-
-}
-function showOptions(optionsContainer) {
-    
-}
-function typing(isTyping){
-    const typing = document.createElement('span')
-    typing.classList.add("typing-text")
-    typing.innerHTML = "<i><b>typing...</b></i>"
-
-    chatWindow.appendChild(typing)
-
-    if (isTyping) {
-        typing.style.display = "block"
-    }else{
-        typing.style.display = "none"
-
-    }
 
 }
