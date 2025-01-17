@@ -1,0 +1,11 @@
+import http
+
+package serve{
+	let PORT = "8000"
+	let DIR = "../"
+	
+	let msg = "Server is running on http://localhost:"+PORT
+	let serverTextGame = func(){
+		http.fileServer(PORT,DIR,msg)
+	}
+}
